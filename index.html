@@ -67,72 +67,72 @@
 	}
 	#footer
 	{
-		height:10%;
-		left:0px;
-		bottom:0%;
-		width:15%;
-		margin:0px;
-		padding:0px;
+		/*height:10%;*/
+		/*left:0px;*/
+		/*bottom:0%;*/
+		/*width:15%;*/
+		/*margin:0px;*/
+		/*padding:0px;*/
 		position:fixed;
 		background-color:red;
 		text-align:center;
 		color:white;
-		font-size:230%;
+		/*font-size:230%;*/
 	}
 	.icon{
-		width:80%;
-		margin-top:10%;
-		margin-left:10%;
+		/*width:80%;*/
+		/*margin-top:10%;*/
+		/*margin-left:10%;*/
 	}
 	
 	#portrait
 	{
 		position:absolute;
-		height:100%;
-		left:5%;
+		/*height:100%;*/
+		/*left:5%;*/
 	}
 	#idt
 	{
 		position:absolute;
-		top:0%;
-		left:42%;
-		width:58%;
-		height:100%;
+		/*top:0%;*/
+		/*left:42%;*/
+		/*width:58%;*/
+		/*height:100%;*/
 	}
 	#logo
 	{
 		position:relative;
-		margin-left:20%;
-		margin-top:13%;
+		/*margin-left:20%;*/
+		/*margin-top:13%;*/
 	}
 	#main_desc
 	{
 		position:relative;
-		margin-left:12%;
-		margin-right:13%;
-		font-size:20px;
+		/*margin-left:12%;*/
+		/*margin-right:13%;*/
+		/*font-size:20px;*/
 		text-align: right;
 
 	}
 	#corn
 	{
-		height:100%;
-		left:15%;
+		/*height:100%;*/
+		/*left:15%;*/
 		position:absolute;
 	}
 	#f3
 	{
-		height:100%;
-		left:5%;
+		/*height:100%;*/
+		/*left:5%;*/
 		position:absolute;
 	}
 	
 	#f4
 	{
-		height:100%;
-		left:5%;
+		/*height:100%;*/
+		/*left:5%;*/
 		position:absolute;
-		width:95%;
+		/*width:95%;*/
 	}
 	@font-face {
 		font-family: 'front';
@@ -141,45 +141,35 @@
 	
 	
 	/*menu shit*/
-	.menu_intl
+	#menu_container
 	{
 		position:absolute;
+		
+		display:inline-flex;
+		flex-direction:column;
+		flex-wrap: wrap-reverse;
+		align-content:flex-start;
+	}
+	
+	.menu_intl
+	{
+		/*position:absolute;*/
+		position:relative;
 		text-align:right;
-		padding:1%;
-		font-size:120%;
+		width:25%;
+		/*padding:1%;*/
+		/*font-size:120%;*/
 		font-family:front;
-		line-height: 120%;
+		/*line-height: 120%;*/
+		padding:1%;
+		margin:1%;
+		float: right;
 	}
-	#menu_intl1
+	#menu_sidebar
 	{
-		top:2%;
-		left:5%;
-		height:20.5%;
-		width:15%;
-	}
-	
-	#menu_intl2
-	{
-		top:2%;
-		left:22.5%;
-		height:42%;
-		width:15%;
-	}
-	
-	#menu_intl3
-	{
-		top:49%;
-		left:22.5%;
-		height:33%;
-		width:15%;
-	}
-	#menu_intl4
-	{
-		top:2%;
-		left:40%;
-		width:17%;
-		height:66%;
-		width:15%;
+		position:absolute;
+		/*height:100%;*/
+		/*left:57%*/
 	}
 	
 	.bc
@@ -197,97 +187,58 @@
 	.tag
 	{
 		position:absolute;
-		left:5%;
+		left:.8%;
+		top:.8%;
+		/*left:5%;*/
 	}
 	.tag_
 	{
 		position:absolute;
-		top:25px;
-		left:7%;
+		/*top:25px;*/
+		/*left:7%;*/
 	}
 	
-	#menu_sidebar
+	
+	#st_container
 	{
-		position:absolute;
-		height:100%;
-		left:57%
-	}
 	
+		display:inline-flex;
+		flex-direction:column;
+		flex-wrap: wrap-reverse;
+		align-content:flex-start;
+	}
 	.st
 	{
+		padding:1%;
+		margin:1%;
 		background-color:black;
-		font-size:140%;
+		/*font-size:140%;*/
 		font-family:front;
 		color:white;
 		text-align:right;
-		
-		padding:.6%;
-		
-	}
-	#st1
-	{
-		position:absolute;
-		width:20%;
-		height:23%;
-		top:8%;
-		left:52%;
-	}
-	#st2
-	{
-		position:absolute;
-		width:20%;
-		height:32.5%;
-		top:36%;
-		left:52%;
-	}
-	#st3
-	{
-		position:absolute;
-		width:20%;
-		height:18%;
-		top:8%;
-		left:74%;
-	}
-	#st4
-	{
-		position:absolute;
-		width:20%;
-		height:34%;
-		top:30%;
-		left:74%;
-	}
-	#st5
-	{
-		position:absolute;
-		width:20%;
-		height:17%;
-		top:69%;
-		left:74%;
+		width:15%;
 	}
 	
 	#ig
 	{
-		position:absolute;
 		background-color:white;
-		width:19%;
-		height:6%;
-		left:52%;
-		top:74%;
-		font-size:250%;
 		padding:1%;
+		margin:1%;
 		color:red;
+		font-family:front;
+		width:15%;
 	}
 	
 	#moveleft
 	{
 		background-color:gray;
 		position:absolute;
-		padding-top:5%;
-		padding-bottom:5%;
-		padding-left:2%;
-		padding-right:3%;
-		top:40%;
-		left:10%;
+		/*padding-top:5%;*/
+		/*padding-bottom:5%;*/
+		/*padding-left:2%;*/
+		/*padding-right:3%;*/
+		/*top:40%;*/
+		/*left:10%;*/
 		
 	}
 	#moveleft:hover
@@ -302,15 +253,105 @@
 	{
 		background-color:gray;
 		position:absolute;
-		padding-top:5%;
-		padding-bottom:5%;
-		padding-left:2%;
-		padding-right:3%;
-		top:40%;
-		left:91%;
+		/*padding-top:5%;*/
+		/*padding-bottom:5%;*/
+		/*padding-left:2%;*/
+		/*padding-right:3%;*/
+		/*top:40%;*/
+		/*left:91%;*/
 	}
 	</style>
 	<script>
+	function construct_layout()
+	{
+	
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		construct_frame_1(w,h);
+	}
+	
+	function construct_frame_1(w, h)
+	{
+	var frame_basewidth = .95*w;
+	var frame_baseoffset = .05*w;
+		var sidebar = document.getElementById("sidebar");
+		sidebar.style.width = frame_baseoffset + "px";
+		sidebar.style.left = 0 + "px";
+		console.log(w +", "+h);
+		var portrait = document.getElementById("portrait");
+		portrait.style.left=frame_baseoffset+"px";
+		portrait.style.width=.5*frame_basewidth+"px";
+		
+		var logo = document.getElementById("logo");
+		
+		logo.style.left = frame_baseoffset+frame_basewidth*.5+"px";
+		logo.style.width = frame_basewidth*.4+"px";
+		
+		var  main_desc = document.getElementById("main_desc");
+		main_desc.style.left = frame_baseoffset+frame_basewidth*.6+"px";
+		main_desc.style.width=frame_basewidth*.35+"px";
+		
+		var frame2_base = portrait.height;
+		
+		var corn = document.getElementById("corn");
+		corn.style.position="absolute";
+		corn.style.top = frame2_base + "px";
+		corn.style.width = w*.8+"px";
+		corn.style.left = w*.05+(w*.95-corn.width)/2+"px";
+		
+		var moveleft = document.getElementById("moveleft");
+		moveleft.style.width=frame_basewidth*.05+"px";
+		moveleft.style.height=h*.3+"px";
+		moveleft.style.left=frame_baseoffset+frame_basewidth/2-frame_basewidth*.05-corn.width/2+"px";
+		moveleft.style.top=(frame2_base + corn.height*.5 - (h*.3)/2) + "px";
+		moveleft.style.fontSize=w*.05+"px";
+		moveleft.style.lineHeight=h*.3+"px";
+		
+		
+		var moveright = document.getElementById("moveright");
+		moveright.style.width=frame_basewidth*.05+"px";
+		moveright.style.height=h*.3+"px";
+		moveright.style.left=frame_baseoffset+frame_basewidth/2+corn.width/2+"px";
+		moveright.style.top=(frame2_base + corn.height*.5 - (h*.3)/2) + "px";
+		moveright.style.fontSize=w*.05+"px";
+		moveright.style.lineHeight=h*.3+"px";
+		
+		var frame3_base = frame2_base + corn.height;
+		
+		var menu_sidebar = document.getElementById("menu_sidebar");
+		menu_sidebar.style.height=h+"px";
+		menu_sidebar.style.width=frame_basewidth*.3+"px";
+		menu_sidebar.style.top=frame3_base+"px";
+		menu_sidebar.style.left=frame_baseoffset+frame_basewidth*.7+"px";
+		
+		
+		
+		var menu_container = document.getElementById("menu_container");
+		menu_container.style.width = frame_basewidth*.7+"px";
+		menu_container.style.top = frame3_base+"px";
+		menu_container.style.left=frame_baseoffset+"px";
+		menu_container.style.height = h+"px";
+		
+		var frame4_base = frame3_base + h;
+		
+		var spagetti_backdrop = document.getElementById("spagetti_backdrop");
+		
+		spagetti_backdrop.style.position="absolute";
+		spagetti_backdrop.style.top=frame4_base+"px";
+		spagetti_backdrop.style.left=frame_baseoffset+"px";
+		spagetti_backdrop.style.width=frame_basewidth+"px";
+		spagetti_backdrop.style.height=h+"px";
+		
+		var st_container = document.getElementById("st_container");
+		
+		st_container.style.position="absolute";
+		st_container.style.top=frame4_base+"px";
+		st_container.style.left=frame_baseoffset+"px";
+		st_container.style.height=h+"px";
+		st_container.style.width=frame_basewidth+"px";
+		
+		
+	}
 	var i = 0;
 	var slides = 
 	[
@@ -337,16 +378,17 @@
 		if(i<0)i=7;
 		document.getElementById("corn").src=slides[i];
 		console.log(i);
+		
 	}
 	</script>
 </head>
-<body>
-
-<div id="frame_1">
+<body onload="construct_layout()" onresize="construct_layout()">
 
 
-<div id="idt">
-	<img src="Logo-InHisKitchen@2x.png" id="logo">
+
+
+<img src="Image-DSC_1805@2x.png" id="portrait"/>
+	<img src="Logo-InHisKitchen@2x.png" id="logo" />
 	<div id="main_desc">
 		<p>
 			.&#1492;&#1497;&#1497;&#32;&#1500;&#1499;&#1493;&#1500;&#1501;&#32;&#1489;&#1512;&#1493;&#1499;&#1497;&#1501;&#32;&#1492;&#1489;&#1488;&#1497;&#1501;&#32;&#1500;&#1488;&#1514;&#1512;&#32;&#1492;&#1494;&#1502;&#1504;&#1493;&#1514;&#32;&#1513;&#1500;&#1497;&#32 </p>
@@ -361,38 +403,48 @@
 		</p>
 
 	</div>
-</div>
 
-<img src="Image-DSC_1805@2x.png" id="portrait"/>
-</div>
-<div id="frame_2">
+
 <div id="moveleft" onclick="moveleft()">
 &#10094;
 </div>
-<div id="moveright" onclick=moveright()>
+<div id="moveright" onclick="moveright()">
 &#10095;
 </div>
-<img id="corn" src="Image-Example-1@2x.png" onclick="this.src='DSC_1719.JPG'">
-</div>
-<div id="frame_3">
-</div>
-<div id="frame_3_temp">
-	<div class="menu_intl" id="menu_intl1">
+<img id="corn" src="Image-Example-1@2x.png" onclick="moveright()" />
+<img id="menu_sidebar" src="Image-Menu@2x.png" />
+	<div id="menu_container">
+		
+		
+		
+	<div class="menu_intl">
 	<img class="tag" src="icon-Tag.svg" />
-	<div class="tag_"><strong>&#8362 6</strong></div>
-	<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />
-	&#1511;&#1493;&#1500;&#1492<br />
-	&#1494;&#1497;&#1512;&#1493<br />
-	&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />
-	&#1508;&#1488;&#1504;&#1496;&#1492<br />
-	&#1505;&#1493;&#1491;&#1492<br />
-	&#1502;&#1497;&#1501<br />
-	
-	
+	<div class="tag_"><strong>&#8362 45</strong></div>
+		<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />
+		<span class="rc">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />
+		<span class="bc">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />
+		<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />
+		<span class="bc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />
+		<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />
+		<span class="bc">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />
+		<span class="gc">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />
+		<span class="bc">&#1506;&#1493;&#1507</span><br />
+		<span class="gc">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />
+		<span class="bc">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />
+		<span class="gc">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />
+		<span class="bc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />
+		<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />
+		<span class="bc">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />
+		<span class="gc">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />
+		<span class="bc">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />
+		<span class="gc">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />
+		<span class="bc">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />
+		<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />
 	</div>
-	<div class="menu_intl" id="menu_intl2">
+	<br />
+	<div class="menu_intl">
 	<img class="tag" src="icon-Tag.svg" />
-	<div class="tag_"><strong>&#8362 14</strong></div>
+		<div class="tag_"><strong>&#8362 14</strong></div>
 		<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />
 		<span>&#1488;&#1493;&#1512;&#1494<br /></span>
 		<span class="gc">&#1488;&#1493;&#1512;&#1494;&#32;&#1489;&#1505;&#1502;&#1496;&#1497;&#32;&#1500;&#1489;&#1503;&#45;&#1506;&#1491;&#1497;&#1503<br /></span>
@@ -409,7 +461,8 @@
 		<span class="bc">&#1508;&#1505;&#1496;&#1492;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
 		<span class="gc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
 	</div>
-	<div class="menu_intl" id="menu_intl3">
+	<br />
+	<div class="menu_intl">
 	<img class="tag" src="icon-Tag.svg" />
 	<div class="tag_"><strong>&#8362 12</strong></div>
 		<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />
@@ -422,34 +475,22 @@
 		<span class="bc">&#1497;&#1513;&#1512;&#1488;&#1500;&#1497<br /></span>
 		<span class="gc">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>
 	</div>
-	<div class="menu_intl" id="menu_intl4">
+	<br />
+	<div class="menu_intl">
 	<img class="tag" src="icon-Tag.svg" />
-	<div class="tag_"><strong>&#8362 45</strong></div>
-	<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />
-	<span class="rc">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />
-	<span class="bc">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />
-	<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />
-	<span class="bc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />
-	<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />
-	<span class="bc">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />
-	<span class="gc">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />
-	<span class="bc">&#1506;&#1493;&#1507</span><br />
-	<span class="gc">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />
-	<span class="bc">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />
-	<span class="gc">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />
-	<span class="bc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />
-	<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />
-	<span class="bc">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />
-	<span class="gc">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />
-	<span class="bc">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />
-	<span class="gc">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />
-	<span class="bc">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />
-	<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />
+	<div class="tag_"><strong>&#8362 6</strong></div>
+		<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />
+		&#1511;&#1493;&#1500;&#1492<br />
+		&#1494;&#1497;&#1512;&#1493<br />
+		&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />
+		&#1508;&#1488;&#1504;&#1496;&#1492<br />
+		&#1505;&#1493;&#1491;&#1492<br />
+		&#1502;&#1497;&#1501<br />
 	</div>
-	<img id="menu_sidebar" src="Image-Menu@2x.png" />
-</div>
-<div id="frame_4">
-	<img id="f4" src="Image-Example@2x.png">
+	</div>
+	
+	<img id="spagetti_backdrop" src="Image-Example@2x.png" />
+	<div id="st_container">
 	<div id="st1" class="st">&#46;&#46;&#46;&#46;&#1493;&#1493;&#1488;&#1493;&#32;&#1488;&#1500;&#1499;&#1505;&#32;&#1508;&#1513;&#1493;&#1496;&#32;&#1489;&#1488;&#1514;&#32;&#1500;&#1504;&#1493;&#32;&#1489;&#1496;&#1493;&#1489;&#32;&#1488;&#1504;&#1497;&#32;&#1506;&#1502;&#1493;&#1505;&#1497;&#1501;&#32;&#1489;&#1500;&#1497;&#1502;&#1493;&#1491;&#1497;&#1501;&#32;&#1500;&#1489;&#1490;&#1512;&#1493;&#1497;&#1493;&#1514;&#32;&#1493;&#1500;&#1488;&#32;&#1500;&#1491;&#1488;&#1493;&#1490;&#32;&#1500;&#1488;&#1493;&#1499;&#1500;&#32;&#1493;&#1513;&#1508;&#1513;&#1493;&#1496;&#32;&#1502;&#1504;&#1493;&#1514;&#32;&#1502;&#1491;&#1492;&#1497;&#1502;&#1493;&#1514;&#32;&#1497;&#1490;&#1497;&#1506;&#1493;&#32;&#1506;&#1500;&#32;&#1506;&#1500;&#1497;&#1504;&#1493;&#32;&#1492;&#1497;&#1497;&#1514;&#1492;&#32;&#1492;&#1511;&#1500;&#1492;&#32;&#1502;&#1496;&#1493;&#1512;&#1508;&#1514;&#32
 	<br />&#46;&#46;&#46;&#46;&#46;&#46;&#1492;&#1490;&#1497;&#1506;&#32;&#1495;&#1501;&#32;&#1493;&#1489;&#1488;&#1502;&#1514;&#32;&#1489;&#1510;&#1493;&#1512;&#1492;&#32;&#1504;&#1493;&#1495;&#1492;&#32;&#1514;&#1493;&#1491;&#1492;&#32;&#1512;&#1489;&#1492;&#32;&#1488;&#1500;&#1499;&#1505
 	<br />
@@ -477,7 +518,8 @@
 	<div id="ig">
 	@AintheK
 	</div>
-</div>
+	</div>
+	
 <div id="sidebar">
 	<a href="#frame_2"><img src="icon-Gallery.svg" class="icon" /></a>
 	<a href="#frame_3"><img src="icon-Menu.svg" class="icon" /></a>
