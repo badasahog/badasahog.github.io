@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>title caption</title>
+	<title>Alex In His Kitchen</title>
 	<style>
 	html {
 		height: 100%;
@@ -63,21 +63,11 @@
 		position:fixed;
 		margin:0px;
 		padding:0px;
+		top:0px;
+		left:0px;
 	
 	}
-	#footer
-	{
-		top:auto;
-		position:fixed;
-		background-color:red;
-		text-align:center;
-		color:white;
-		font-family:front;
-		font-size:1.5em;
-		bottom:0px;
-		left:0px;
-		padding:1%;
-	}
+	
 	.icon{
 		/*width:80%;*/
 		/*margin-top:10%;*/
@@ -113,7 +103,7 @@
 		text-align: right;
 
 	}
-	#corn
+	#images
 	{
 		/*height:100%;*/
 		/*left:15%;*/
@@ -139,8 +129,8 @@
 	}
 	
 	
-	/*menu shit*/
-	#menu_container
+	/*orderlist shit*/
+	#menu
 	{
 		position:absolute;
 		
@@ -150,21 +140,27 @@
 		align-content:flex-start;
 	}
 	
-	.menu_intl
+	.orderlist_intl_hebrew
 	{
-		/*position:absolute;*/
 		position:relative;
-		text-align:right;
 		width:25%;
-		/*padding:1%;*/
-		/*font-size:120%;*/
 		font-family:front;
-		/*line-height: 120%;*/
 		padding:1%;
 		margin:1%;
 		float: right;
+		text-align:right;
 	}
-	#menu_sidebar
+	.orderlist_intl_english
+	{
+		position:relative;
+		width:25%;
+		font-family:front;
+		padding:1%;
+		margin:1%;
+		float: right;
+		text-align:left;
+	}
+	#orderlist_sidebar
 	{
 		position:absolute;
 		/*height:100%;*/
@@ -190,15 +186,26 @@
 		top:.8%;
 		/*left:5%;*/
 	}
+	.tag_english
+	{
+		position:absolute;
+		right:.8%;
+		top:.8%;
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+	}
 	.tag_
 	{
 		position:absolute;
-		/*top:25px;*/
-		/*left:7%;*/
+	}
+	._tag_english
+	{
+		position:absolute;
+		right:4%;
+		top:1.2%;
 	}
 	
-	
-	#st_container
+	#recommendations
 	{
 	
 		display:inline-flex;
@@ -259,6 +266,44 @@
 		/*top:40%;*/
 		/*left:91%;*/
 	}
+	
+	#setLanguage
+	{
+		position:absolute;
+		background-color:white;
+		font-family:front;
+		font-size:150%;
+		width:auto;
+		width:10%;
+
+	}
+	#whitebox
+	{
+	background-color:white;
+
+	}
+	#setLanguage>*>*
+	{
+		background-color:lightgray;
+		padding:10%;
+		margin:10%;
+		text-align:center;
+		font-size: 1vw;
+
+	}
+	
+	#footer
+	{
+		position:fixed;
+		background-color:red;
+		text-align:center;
+		color:white;
+		font-family:front;
+		font-size:1.5em;
+		bottom:0px;
+		left:0px;
+		padding:1%;
+	}
 	</style>
 	<script>
 	function construct_layout()
@@ -292,17 +337,17 @@
 		
 		var frame2_base = portrait.height;
 		
-		var corn = document.getElementById("corn");
-		corn.style.position="absolute";
-		corn.style.top = frame2_base + "px";
-		corn.style.width = w*.8+"px";
-		corn.style.left = w*.05+(w*.95-corn.width)/2+"px";
+		var images = document.getElementById("images");
+		images.style.position="absolute";
+		images.style.top = frame2_base + "px";
+		images.style.width = w*.8+"px";
+		images.style.left = w*.05+(w*.95-images.width)/2+"px";
 		
 		var moveleft = document.getElementById("moveleft");
 		moveleft.style.width=frame_basewidth*.05+"px";
 		moveleft.style.height=h*.3+"px";
-		moveleft.style.left=frame_baseoffset+frame_basewidth/2-frame_basewidth*.05-corn.width/2+"px";
-		moveleft.style.top=(frame2_base + corn.height*.5 - (h*.3)/2) + "px";
+		moveleft.style.left=frame_baseoffset+frame_basewidth/2-frame_basewidth*.05-images.width/2+"px";
+		moveleft.style.top=(frame2_base + images.height*.5 - (h*.3)/2) + "px";
 		moveleft.style.fontSize=w*.05+"px";
 		moveleft.style.lineHeight=h*.3+"px";
 		
@@ -310,26 +355,30 @@
 		var moveright = document.getElementById("moveright");
 		moveright.style.width=frame_basewidth*.05+"px";
 		moveright.style.height=h*.3+"px";
-		moveright.style.left=frame_baseoffset+frame_basewidth/2+corn.width/2+"px";
-		moveright.style.top=(frame2_base + corn.height*.5 - (h*.3)/2) + "px";
+		moveright.style.left=frame_baseoffset+frame_basewidth/2+images.width/2+"px";
+		moveright.style.top=(frame2_base + images.height*.5 - (h*.3)/2) + "px";
 		moveright.style.fontSize=w*.05+"px";
 		moveright.style.lineHeight=h*.3+"px";
 		
-		var frame3_base = frame2_base + corn.height;
+		var frame3_base = frame2_base + images.height;
 		
-		var menu_sidebar = document.getElementById("menu_sidebar");
-		menu_sidebar.style.height=h+"px";
-		menu_sidebar.style.width=frame_basewidth*.3+"px";
-		menu_sidebar.style.top=frame3_base+"px";
-		menu_sidebar.style.left=frame_baseoffset+frame_basewidth*.7+"px";
+		var orderlist_sidebar = document.getElementById("orderlist_sidebar");
+		orderlist_sidebar.style.height=h+"px";
+		orderlist_sidebar.style.width=frame_basewidth*.3+"px";
+		orderlist_sidebar.style.top=frame3_base+"px";
+		orderlist_sidebar.style.left=frame_baseoffset+frame_basewidth*.7+"px";
+		
+		var setLanguage = document.getElementById("setLanguage");
+		setLanguage.style.top=frame3_base+"px";
+		setLanguage.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
 		
 		
-		var menu_container = document.getElementById("menu_container");
-		menu_container.style.width = frame_basewidth*.7+"px";
-		menu_container.style.top = frame3_base+"px";
-		menu_container.style.left=frame_baseoffset+"px";
-		menu_container.style.height = h+"px";
+		var menu = document.getElementById("menu");
+		menu.style.width = frame_basewidth*.7+"px";
+		menu.style.top = frame3_base+"px";
+		menu.style.left=frame_baseoffset+"px";
+		menu.style.height = h+"px";
 		
 		var frame4_base = frame3_base + h;
 		
@@ -341,15 +390,168 @@
 		spagetti_backdrop.style.width=frame_basewidth+"px";
 		spagetti_backdrop.style.height=h+"px";
 		
-		var st_container = document.getElementById("st_container");
+		var recommendations = document.getElementById("recommendations");
 		
-		st_container.style.position="absolute";
-		st_container.style.top=frame4_base+"px";
-		st_container.style.left=frame_baseoffset+"px";
-		st_container.style.height=h+"px";
-		st_container.style.width=frame_basewidth+"px";
+		recommendations.style.position="absolute";
+		recommendations.style.top=frame4_base+"px";
+		recommendations.style.left=frame_baseoffset+"px";
+		recommendations.style.height=h+"px";
+		recommendations.style.width=frame_basewidth+"px";
 		
 		
+	}
+	function setEnglish()
+	{
+		var menu = document.getElementById("menu");
+		menu.innerHTML=
+		"<div class=\"orderlist_intl_english\">"+
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"_tag_english\"><strong>&#8362 45</strong></div>"+
+		"<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />"+
+		"<span class=\"rc\">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />"+
+		"<span class=\"bc\">Schnitzel for the soul</span><br />"+
+		"<span class=\"gc\">Chicken breast coated in bread crumbs and fried to a crisp.</span><br />"+
+		"<span class=\"bc\">The Classic Beef Kebab:</span><br />"+
+		"<span class=\"gc\">Beef Kebabs served in a delicious sweet sauce like grandma used to make.</span><br />"+
+		"<span class=\"bc\">Ara’is from the East:</span><br />"+
+		"<span class=\"gc\">Ground beef cooked with a glorious array of flavors including onions, garlic, and a little bit o spice - Stuffed into a pita and grilled</span><br />"+
+		"<span class=\"bc\">Not just your normal chicken:</span><br />"+
+		"<span class=\"gc\">Chicken basted in marinade and spices, oven-cooked, and served with onion and sweet potatoes</span><br />"+
+		"<span class=\"bc\">Dark Side of the bird:</span><br />"+
+		"<span class=\"gc\">Thighs and drumsticks smothered in marinade and pan-cooked to perfection.</span><br />"+
+		"<span class=\"bc\">Nonna’s Spaghetti Bolognese:</span><br />"+
+		"<span class=\"gc\">A kosher twist to a staple dish - Spaghetti smothered in a ground beef sauce</span><br />"+
+		"<span class=\"bc\">Spicy Fish In this Moroccan dish:</span><br />"+
+		"<span class=\"gc\">Tilapia Filet cooked Moroccan style with a little spice and everything nice</span><br />"+
+		"<span class=\"bc\">The Beefiest Bourekas:</span><br />"+
+		"<span class=\"gc\">Bourekas stuffed with beef and smothered in a delicious mushroom sauce</span><br />"+
+		"<span class=\"bc\">Tastes Like Christmas:</span><br />"+
+		"<span class=\"gc\">Asian Style Chicken Stir-Fry with Noodles, Chicken Breast, and Veggies</span><br />"+
+		"</div>"+
+		"<br />"+
+		"<div class=\"orderlist_intl_english\">"+
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"_tag_english\"><strong>&#8362 14</strong></div>"+
+		"<strong>Side Dishes</strong><br /><br />"+
+		"<span class=\"bc\">Rice<br /></span>"+
+		"<span class=\"gc\">Basmati Rice<br /></span>"+
+		"<span class=\"bc\">Puree<br /></span>"+
+		"<span class=\"gc\">Mashed Potatoes with our house seasoning<br /></span>"+
+		"<span class=\"bc\">Green Beans<br /></span>"+
+		"<span class=\"gc\">Green Beans Cooked In Soy Sauce and Covered in Sesame Seeds<br /></span>"+
+		"<span class=\"bc\">Potatoes<br /></span>"+
+		"<span class=\"gc\">Oven cooked, seasoned and crunchy<br /></span>"+
+		"<span class=\"bc\">Couscous<br /></span>"+
+		"<span class=\"gc\">Israeli Couscous with Spices and Chopped Onions<br /></span>"+
+		"<span class=\"bc\">French Fries<br /></span>"+
+		"<span class=\"gc\">Sliced thin and cooked to a crunch<br /></span>"+
+		"<span class=\"bc\">Pasta in Tomato Sauce<br /></span>"+
+		"<span class=\"gc\">Spaghetti cooked in tomato sauce<br /></span>"+
+		"</div>"+
+		"<br />"+
+		"<div class=\"orderlist_intl_english\">"+
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"_tag_english\"><strong>&#8362 12</strong></div>"+
+		"<strong>Salads</strong><br /><br />"+
+		"<span class=\"bc\">Ashkenazi Salad<br /></span>"+
+		"<span class=\"gc\">Lettuce, Red Peppers, Yellow Peppers, Avocado, and Tomatoes served with thousand island dressing<br /></span>"+
+		"<span class=\"bc\">Coleslaw<br /></span>"+
+		"<span class=\"gc\">Purple Cabbage with mayonnaise, Lemon juice, Garlic, and seasoning<br /></span>"+
+		"<span class=\"bc\">Israeli Salad<br /></span>"+
+		"<span class=\"gc\">Chopped Purple Onions, Cucumbers and Tomatoes with olive oil, parsley, salt, pepper, and lemon juice<br /></span>"+
+		"<span class=\"bc\">Roasted vegetables<br /></span>"+
+		"<span class=\"gc\">eggplant, sweet potato, courgettes, yellow pepper, seasoned nicely<br /></span>"+
+		"</div>"+
+		"<br />"+
+		"<div class=\"orderlist_intl_english\">"+
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"_tag_english\"><strong>&#8362 6</strong></div>"+
+		"<strong>Drinks</strong><br /><br />"+
+		"&#1511;&#1493;&#1500;&#1492<br />"+
+		"&#1494;&#1497;&#1512;&#1493<br />"+
+		"&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />"+
+		"&#1508;&#1488;&#1504;&#1496;&#1492<br />"+
+		"&#1505;&#1493;&#1491;&#1492<br />"+
+		"&#1502;&#1497;&#1501<br />"+
+		"</div>";
+		
+		
+	}
+	function setHebrew()
+	{
+		var menu = document.getElementById("menu");
+		
+		menu.innerHTML=
+		"<div class=\"orderlist_intl_hebrew\">"+
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"tag_\"><strong>&#8362 45</strong></div>"+
+		"<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />"+
+		"<span class=\"rc\">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />"+
+		"<span class=\"bc\">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />"+
+		"<span class=\"gc\">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />"+
+		"<span class=\"bc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />"+
+		"<span class=\"gc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />"+
+		"<span class=\"bc\">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />"+
+		"<span class=\"gc\">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />"+
+		"<span class=\"bc\">&#1506;&#1493;&#1507</span><br />"+
+		"<span class=\"gc\">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />"+
+		"<span class=\"bc\">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />"+
+		"<span class=\"gc\">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />"+
+		"<span class=\"bc\">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />"+
+		"<span class=\"gc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />"+
+		"<span class=\"bc\">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />"+
+		"<span class=\"gc\">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />"+
+		"<span class=\"bc\">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />"+
+		"<span class=\"gc\">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />"+
+		"<span class=\"bc\">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />"+
+		"<span class=\"gc\">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />"+
+		"</div>"+
+		"<br />"+
+		"<div class=\"orderlist_intl_hebrew\">"+
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"tag_\"><strong>&#8362 14</strong></div>"+
+		"<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />"+
+		"<span>&#1488;&#1493;&#1512;&#1494<br /></span>"+
+		"<span class=\"gc\">&#1488;&#1493;&#1512;&#1494;&#32;&#1489;&#1505;&#1502;&#1496;&#1497;&#32;&#1500;&#1489;&#1503;&#45;&#1506;&#1491;&#1497;&#1503<br /></span>"+
+		"<span class=\"bc\">&#1508;&#1497;&#1512;&#1492<br /></span>"+
+		"<span class=\"gc\">&#1502;&#1495;&#1497;&#1514;&#32;&#1514;&#1508;&#1493;&#1495;&#1497;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1489;&#1514;&#1497;&#1489;&#1493;&#1500;&#32;&#1492;&#1489;&#1497;&#1514<br /></span>"+
+		"<span class=\"bc\">&#1513;&#1506;&#1493;&#1506;&#1497;&#1514;&#32;&#1497;&#1512;&#1493;&#1511;&#1492<br /></span>"+
+		"<span class=\"gc\">&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1505;&#1493;&#1497;&#1492;&#32;&#1505;&#1497;&#1500;&#1488;&#1503;&#32;&#1488;&#1501;&#32;&#1513;&#1493;&#1502;&#1513;&#1493;&#1501;&#32;&#1502;&#1506;&#1500<br /></span>"+
+		"<span class=\"bc\">&#1514;&#1508;&#1493;&#34;&#1488;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>"+
+		"<span class=\"gc\">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1493;&#1511;&#1512;&#1488;&#1504;&#1510;&#1497<br /></span>"+
+		"<span class=\"bc\">&#1508;&#1514;&#1497;&#1514;&#1497;&#1501<br /></span>"+
+		"<span class=\"gc\">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1488;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1511;&#1510;&#1493;&#1509<br /></span>"+
+		"<span class=\"bc\">&#1510;&#1497;&#1508;&#34;&#1505<br /></span>"+
+		"<span class=\"gc\">&#1514;&#1508;&#1493;&#1495;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1511;&#1500;&#1488;&#1505;&#1497;&#32;&#1491;&#1511<br /></span>"+
+		"<span class=\"bc\">&#1508;&#1505;&#1496;&#1492;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>"+
+		"<span class=\"gc\">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>"+
+		"</div>"+
+		"<br />"+
+		"<div class=\"orderlist_intl_hebrew\">"+
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"tag_\"><strong>&#8362 12</strong></div>"+
+		"<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />"+
+		"<span class=\"bc\">&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1510;&#1500;&#1493;&#1497;&#1497;&#1501<br /></span>"+
+		"<span class=\"gc\">&#1489;&#1496;&#1496;&#1492;&#32;&#1511;&#1497;&#1513;&#1493;&#1488;&#32;&#1495;&#1510;&#1497;&#1500;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1493;&#1510;&#1492;&#1493;&#1489;&#32;&#1502;&#1514;&#1493;&#1489;&#1500;&#1504;&#1497;&#1501;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>"+
+		"<span class=\"bc\">&#1488;&#1513;&#1499;&#1504;&#1494;&#1497<br /></span>"+
+		"<span class=\"gc\">&#1495;&#1505;&#1492;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#44;&#32;&#1510;&#1492;&#1493;&#1489;&#44;&#32;&#1488;&#1489;&#1493;&#1511;&#1491;&#1493;&#32;&#1493;&#1506;&#1490;&#1489;&#1504;&#1497;&#1497;&#1492;&#32;&#1502;&#1493;&#1490;&#1513;&#32;&#1488;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1488;&#1500;&#1507;&#32;&#1492;&#1488;&#1497;&#1497;&#1501<br /></span>"+
+		"<span class=\"bc\">&#1499;&#1512;&#1493;&#1489<br /></span>"+
+		"<span class=\"gc\">&#1499;&#1512;&#1493;&#1489;&#32;&#1505;&#1490;&#1493;&#1500;&#32;&#1506;&#1501;&#32;&#1502;&#1497;&#1493;&#1504;&#1494;&#32;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501<br /></span>"+
+		"<span class=\"bc\">&#1497;&#1513;&#1512;&#1488;&#1500;&#1497<br /></span>"+
+		"<span class=\"gc\">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>"+
+		"</div>"+
+		"<br />"+
+		"<div class=\"orderlist_intl_hebrew\">"+
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
+		"<div class=\"tag_\"><strong>&#8362 6</strong></div>"+
+		"<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />"+
+		"&#1511;&#1493;&#1500;&#1492<br />"+
+		"&#1494;&#1497;&#1512;&#1493<br />"+
+		"&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />"+
+		"&#1508;&#1488;&#1504;&#1496;&#1492<br />"+
+		"&#1505;&#1493;&#1491;&#1492<br />"+
+		"&#1502;&#1497;&#1501<br />"+
+		"</div>";
 	}
 	var i = 0;
 	var slides = 
@@ -367,7 +569,7 @@
 	{
 		i++;
 		i%=8;
-		document.getElementById("corn").src=slides[i];
+		document.getElementById("images").src=slides[i];
 		console.log(i);
 	}
 	function moveright()
@@ -375,7 +577,7 @@
 	
 		i--;
 		if(i<0)i=7;
-		document.getElementById("corn").src=slides[i];
+		document.getElementById("images").src=slides[i];
 		console.log(i);
 		
 	}
@@ -403,20 +605,20 @@
 
 	</div>
 
-
 <div id="moveleft" onclick="moveleft()">
 &#10094;
 </div>
 <div id="moveright" onclick="moveright()">
 &#10095;
 </div>
-<img id="corn" src="Image-Example-1@2x.png" onclick="moveright()" />
-<img id="menu_sidebar" src="Image-Menu@2x.png" />
-	<div id="menu_container">
+
+<img id="images" src="Image-Example-1@2x.png" onclick="moveright()" />
+<img id="orderlist_sidebar" src="Image-menu@2x.png" />
+	<div id="menu">
 		
 		
 		
-	<div class="menu_intl">
+	<div class="orderlist_intl_hebrew">
 	<img class="tag" src="icon-Tag.svg" />
 	<div class="tag_"><strong>&#8362 45</strong></div>
 		<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />
@@ -441,7 +643,7 @@
 		<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />
 	</div>
 	<br />
-	<div class="menu_intl">
+	<div class="orderlist_intl_hebrew">
 	<img class="tag" src="icon-Tag.svg" />
 		<div class="tag_"><strong>&#8362 14</strong></div>
 		<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />
@@ -461,7 +663,7 @@
 		<span class="gc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
 	</div>
 	<br />
-	<div class="menu_intl">
+	<div class="orderlist_intl_hebrew">
 	<img class="tag" src="icon-Tag.svg" />
 	<div class="tag_"><strong>&#8362 12</strong></div>
 		<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />
@@ -475,7 +677,7 @@
 		<span class="gc">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>
 	</div>
 	<br />
-	<div class="menu_intl">
+	<div class="orderlist_intl_hebrew">
 	<img class="tag" src="icon-Tag.svg" />
 	<div class="tag_"><strong>&#8362 6</strong></div>
 		<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />
@@ -489,7 +691,7 @@
 	</div>
 	
 	<img id="spagetti_backdrop" src="Image-Example@2x.png" />
-	<div id="st_container">
+	<div id="recommendations">
 	<div id="st1" class="st">&#46;&#46;&#46;&#46;&#1493;&#1493;&#1488;&#1493;&#32;&#1488;&#1500;&#1499;&#1505;&#32;&#1508;&#1513;&#1493;&#1496;&#32;&#1489;&#1488;&#1514;&#32;&#1500;&#1504;&#1493;&#32;&#1489;&#1496;&#1493;&#1489;&#32;&#1488;&#1504;&#1497;&#32;&#1506;&#1502;&#1493;&#1505;&#1497;&#1501;&#32;&#1489;&#1500;&#1497;&#1502;&#1493;&#1491;&#1497;&#1501;&#32;&#1500;&#1489;&#1490;&#1512;&#1493;&#1497;&#1493;&#1514;&#32;&#1493;&#1500;&#1488;&#32;&#1500;&#1491;&#1488;&#1493;&#1490;&#32;&#1500;&#1488;&#1493;&#1499;&#1500;&#32;&#1493;&#1513;&#1508;&#1513;&#1493;&#1496;&#32;&#1502;&#1504;&#1493;&#1514;&#32;&#1502;&#1491;&#1492;&#1497;&#1502;&#1493;&#1514;&#32;&#1497;&#1490;&#1497;&#1506;&#1493;&#32;&#1506;&#1500;&#32;&#1506;&#1500;&#1497;&#1504;&#1493;&#32;&#1492;&#1497;&#1497;&#1514;&#1492;&#32;&#1492;&#1511;&#1500;&#1492;&#32;&#1502;&#1496;&#1493;&#1512;&#1508;&#1514;&#32
 	<br />&#46;&#46;&#46;&#46;&#46;&#46;&#1492;&#1490;&#1497;&#1506;&#32;&#1495;&#1501;&#32;&#1493;&#1489;&#1488;&#1502;&#1514;&#32;&#1489;&#1510;&#1493;&#1512;&#1492;&#32;&#1504;&#1493;&#1495;&#1492;&#32;&#1514;&#1493;&#1491;&#1492;&#32;&#1512;&#1489;&#1492;&#32;&#1488;&#1500;&#1499;&#1505
 	<br />
@@ -520,9 +722,16 @@
 	</div>
 	
 <div id="sidebar">
-	<a href="#frame_2"><img src="icon-Gallery.svg" class="icon" /></a>
-	<a href="#frame_3"><img src="icon-Menu.svg" class="icon" /></a>
-	<a href="#frame_4"><img src="icon-Recommandations.svg" class="icon" /></a>
+	<a href="#images"><img src="icon-Gallery.svg" class="icon" /></a>
+	<a href="#menu"><img src="icon-menu.svg" class="icon" /></a>
+	<a href="#recommendations"><img src="icon-Recommandations.svg" class="icon" /></a>
+</div>
+
+<div id="setLanguage">
+<div id="whitebox">
+	<div id="hebrew" onclick="setHebrew()">Hebrew</div>
+	<div id="english" onclick="setEnglish()">English</div>
+	</div>
 </div>
 
 <div id="footer">
