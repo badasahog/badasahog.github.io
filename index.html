@@ -68,60 +68,36 @@
 	
 	}
 	
-	.icon{
-		/*width:80%;*/
-		/*margin-top:10%;*/
-		/*margin-left:10%;*/
-	}
-	
 	#portrait
 	{
 		position:absolute;
-		/*height:100%;*/
-		/*left:5%;*/
 	}
 	#idt
 	{
 		position:absolute;
-		/*top:0%;*/
-		/*left:42%;*/
-		/*width:58%;*/
-		/*height:100%;*/
 	}
 	#logo
 	{
 		position:relative;
-		/*margin-left:20%;*/
-		/*margin-top:13%;*/
 	}
 	#main_desc
 	{
 		position:relative;
-		/*margin-left:12%;*/
-		/*margin-right:13%;*/
-		/*font-size:20px;*/
 		text-align: right;
 
 	}
 	#images
 	{
-		/*height:100%;*/
-		/*left:15%;*/
 		position:absolute;
 	}
 	#f3
 	{
-		/*height:100%;*/
-		/*left:5%;*/
 		position:absolute;
 	}
 	
 	#f4
 	{
-		/*height:100%;*/
-		/*left:5%;*/
 		position:absolute;
-		/*width:95%;*/
 	}
 	@font-face {
 		font-family: 'front';
@@ -163,8 +139,6 @@
 	#orderlist_sidebar
 	{
 		position:absolute;
-		/*height:100%;*/
-		/*left:57%*/
 	}
 	
 	.bc
@@ -239,12 +213,6 @@
 	{
 		background-color:gray;
 		position:absolute;
-		/*padding-top:5%;*/
-		/*padding-bottom:5%;*/
-		/*padding-left:2%;*/
-		/*padding-right:3%;*/
-		/*top:40%;*/
-		/*left:10%;*/
 		
 	}
 	#moveleft:hover
@@ -259,15 +227,9 @@
 	{
 		background-color:gray;
 		position:absolute;
-		/*padding-top:5%;*/
-		/*padding-bottom:5%;*/
-		/*padding-left:2%;*/
-		/*padding-right:3%;*/
-		/*top:40%;*/
-		/*left:91%;*/
 	}
 	
-	#setLanguage
+	.setLanguage
 	{
 		position:absolute;
 		background-color:white;
@@ -277,12 +239,11 @@
 		width:10%;
 
 	}
-	#whitebox
+	.whitebox
 	{
-	background-color:white;
-
+		background-color:white;
 	}
-	#setLanguage>*>*
+	.setLanguage>*>*
 	{
 		background-color:lightgray;
 		padding:10%;
@@ -304,6 +265,18 @@
 		left:0px;
 		padding:1%;
 	}
+	#gotocheckout
+	{
+		position:absolute;
+		background-color:lightgray;
+		text-align:center;
+		padding:1%;
+		margin:1%;
+		text-align:center;
+		font-size:1.5vw;
+		text-decoration:none;
+	}
+	
 	</style>
 	<script>
 	function construct_layout()
@@ -321,7 +294,7 @@
 		var sidebar = document.getElementById("sidebar");
 		sidebar.style.width = frame_baseoffset + "px";
 		sidebar.style.left = 0 + "px";
-		console.log(w +", "+h);
+		console.log(w +", " +h);
 		var portrait = document.getElementById("portrait");
 		portrait.style.left=frame_baseoffset+"px";
 		portrait.style.width=.5*frame_basewidth+"px";
@@ -334,6 +307,10 @@
 		var  main_desc = document.getElementById("main_desc");
 		main_desc.style.left = frame_baseoffset+frame_basewidth*.6+"px";
 		main_desc.style.width=frame_basewidth*.35+"px";
+		
+		var changeLanguage2 = document.getElementById("setLanguage1");
+		changeLanguage2.style.left=frame_baseoffset+frame_basewidth*.85+"px";
+		
 		
 		var frame2_base = portrait.height;
 		
@@ -368,10 +345,14 @@
 		orderlist_sidebar.style.top=frame3_base+"px";
 		orderlist_sidebar.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
-		var setLanguage = document.getElementById("setLanguage");
-		setLanguage.style.top=frame3_base+"px";
-		setLanguage.style.left=frame_baseoffset+frame_basewidth*.7+"px";
+		var setLanguageMenu = document.getElementById("setLanguage_menu");
+		setLanguageMenu.style.top=frame3_base+"px";
+		setLanguageMenu.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
+		var gotocheckout = document.getElementById("gotocheckout");
+		
+		gotocheckout.style.top=frame3_base+h*.2+"px";
+		gotocheckout.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
 		
 		var menu = document.getElementById("menu");
@@ -402,77 +383,88 @@
 	}
 	function setEnglish()
 	{
+		var main_desc = document.getElementById("main_desc");
+		
+		main_desc.innerHTML=
+		"<p>Hi everyone my name is Alex Nussbaum and welcome to my kitchen</p>"+
+		"<p>I started Alex's Kitchen as I wanted to offer delicious, strictly kosher, homemade food to your doorstep. </p>"+
+		"<p>From a young age, I had a love for cooking and have spent my youth perfecting those heart-warming homemade foods we all grew up with. </p>"+
+		"<p>Let us help you sit back, relax and enjoy delicious meals with convenience. </p>"+
+		"<p>Whether for a family, business event, or celebration - we have you covered. </p>"+
+		"<p>Give us a call to order your delicious, homemade meals today.</p>";
+		main_desc.style.textAlign = "left";
+		
 		var menu = document.getElementById("menu");
 		menu.innerHTML=
-		"<div class=\"orderlist_intl_english\">"+
-		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"_tag_english\"><strong>&#8362 45</strong></div>"+
-		"<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />"+
-		"<span class=\"rc\">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />"+
-		"<span class=\"bc\">Schnitzel for the soul</span><br />"+
-		"<span class=\"gc\">Chicken breast coated in bread crumbs and fried to a crisp.</span><br />"+
-		"<span class=\"bc\">The Classic Beef Kebab:</span><br />"+
-		"<span class=\"gc\">Beef Kebabs served in a delicious sweet sauce like grandma used to make.</span><br />"+
-		"<span class=\"bc\">Ara’is from the East:</span><br />"+
-		"<span class=\"gc\">Ground beef cooked with a glorious array of flavors including onions, garlic, and a little bit o spice - Stuffed into a pita and grilled</span><br />"+
-		"<span class=\"bc\">Not just your normal chicken:</span><br />"+
-		"<span class=\"gc\">Chicken basted in marinade and spices, oven-cooked, and served with onion and sweet potatoes</span><br />"+
-		"<span class=\"bc\">Dark Side of the bird:</span><br />"+
-		"<span class=\"gc\">Thighs and drumsticks smothered in marinade and pan-cooked to perfection.</span><br />"+
-		"<span class=\"bc\">Nonna’s Spaghetti Bolognese:</span><br />"+
-		"<span class=\"gc\">A kosher twist to a staple dish - Spaghetti smothered in a ground beef sauce</span><br />"+
-		"<span class=\"bc\">Spicy Fish In this Moroccan dish:</span><br />"+
-		"<span class=\"gc\">Tilapia Filet cooked Moroccan style with a little spice and everything nice</span><br />"+
-		"<span class=\"bc\">The Beefiest Bourekas:</span><br />"+
-		"<span class=\"gc\">Bourekas stuffed with beef and smothered in a delicious mushroom sauce</span><br />"+
-		"<span class=\"bc\">Tastes Like Christmas:</span><br />"+
-		"<span class=\"gc\">Asian Style Chicken Stir-Fry with Noodles, Chicken Breast, and Veggies</span><br />"+
-		"</div>"+
-		"<br />"+
-		"<div class=\"orderlist_intl_english\">"+
-		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"_tag_english\"><strong>&#8362 14</strong></div>"+
-		"<strong>Side Dishes</strong><br /><br />"+
-		"<span class=\"bc\">Rice<br /></span>"+
-		"<span class=\"gc\">Basmati Rice<br /></span>"+
-		"<span class=\"bc\">Puree<br /></span>"+
-		"<span class=\"gc\">Mashed Potatoes with our house seasoning<br /></span>"+
-		"<span class=\"bc\">Green Beans<br /></span>"+
-		"<span class=\"gc\">Green Beans Cooked In Soy Sauce and Covered in Sesame Seeds<br /></span>"+
-		"<span class=\"bc\">Potatoes<br /></span>"+
-		"<span class=\"gc\">Oven cooked, seasoned and crunchy<br /></span>"+
-		"<span class=\"bc\">Couscous<br /></span>"+
-		"<span class=\"gc\">Israeli Couscous with Spices and Chopped Onions<br /></span>"+
-		"<span class=\"bc\">French Fries<br /></span>"+
-		"<span class=\"gc\">Sliced thin and cooked to a crunch<br /></span>"+
-		"<span class=\"bc\">Pasta in Tomato Sauce<br /></span>"+
-		"<span class=\"gc\">Spaghetti cooked in tomato sauce<br /></span>"+
-		"</div>"+
-		"<br />"+
-		"<div class=\"orderlist_intl_english\">"+
-		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"_tag_english\"><strong>&#8362 12</strong></div>"+
-		"<strong>Salads</strong><br /><br />"+
-		"<span class=\"bc\">Ashkenazi Salad<br /></span>"+
-		"<span class=\"gc\">Lettuce, Red Peppers, Yellow Peppers, Avocado, and Tomatoes served with thousand island dressing<br /></span>"+
-		"<span class=\"bc\">Coleslaw<br /></span>"+
-		"<span class=\"gc\">Purple Cabbage with mayonnaise, Lemon juice, Garlic, and seasoning<br /></span>"+
-		"<span class=\"bc\">Israeli Salad<br /></span>"+
-		"<span class=\"gc\">Chopped Purple Onions, Cucumbers and Tomatoes with olive oil, parsley, salt, pepper, and lemon juice<br /></span>"+
-		"<span class=\"bc\">Roasted vegetables<br /></span>"+
-		"<span class=\"gc\">eggplant, sweet potato, courgettes, yellow pepper, seasoned nicely<br /></span>"+
-		"</div>"+
-		"<br />"+
-		"<div class=\"orderlist_intl_english\">"+
-		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"_tag_english\"><strong>&#8362 6</strong></div>"+
-		"<strong>Drinks</strong><br /><br />"+
-		"&#1511;&#1493;&#1500;&#1492<br />"+
-		"&#1494;&#1497;&#1512;&#1493<br />"+
-		"&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />"+
-		"&#1508;&#1488;&#1504;&#1496;&#1492<br />"+
-		"&#1505;&#1493;&#1491;&#1492<br />"+
-		"&#1502;&#1497;&#1501<br />"+
+		"<div class=\"orderlist_intl_english\">" +
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"_tag_english\"><strong>&#8362 45</strong></div>" +
+		"<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />" +
+		"<span class=\"rc\">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />" +
+		"<span class=\"bc\">Schnitzel for the soul</span><br />" +
+		"<span class=\"gc\">Chicken breast coated in bread crumbs and fried to a crisp.</span><br />" +
+		"<span class=\"bc\">The Classic Beef Kebab:</span><br />" +
+		"<span class=\"gc\">Beef Kebabs served in a delicious sweet sauce like grandma used to make.</span><br />" +
+		"<span class=\"bc\">Ara’is from the East:</span><br />" +
+		"<span class=\"gc\">Ground beef cooked with a glorious array of flavors including onions, garlic, and a little bit o spice - Stuffed into a pita and grilled</span><br />" +
+		"<span class=\"bc\">Not just your normal chicken:</span><br />" +
+		"<span class=\"gc\">Chicken basted in marinade and spices, oven-cooked, and served with onion and sweet potatoes</span><br />" +
+		"<span class=\"bc\">Dark Side of the bird:</span><br />" +
+		"<span class=\"gc\">Thighs and drumsticks smothered in marinade and pan-cooked to perfection.</span><br />" +
+		"<span class=\"bc\">Nonna’s Spaghetti Bolognese:</span><br />" +
+		"<span class=\"gc\">A kosher twist to a staple dish - Spaghetti smothered in a ground beef sauce</span><br />" +
+		"<span class=\"bc\">Spicy Fish In this Moroccan dish:</span><br />" +
+		"<span class=\"gc\">Tilapia Filet cooked Moroccan style with a little spice and everything nice</span><br />" +
+		"<span class=\"bc\">The Beefiest Bourekas:</span><br />" +
+		"<span class=\"gc\">Bourekas stuffed with beef and smothered in a delicious mushroom sauce</span><br />" +
+		"<span class=\"bc\">Tastes Like Christmas:</span><br />" +
+		"<span class=\"gc\">Asian Style Chicken Stir-Fry with Noodles, Chicken Breast, and Veggies</span><br />" +
+		"</div>" +
+		"<br />" +
+		"<div class=\"orderlist_intl_english\">" +
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"_tag_english\"><strong>&#8362 14</strong></div>" +
+		"<strong>Side Dishes</strong><br /><br />" +
+		"<span class=\"bc\">Rice<br /></span>" +
+		"<span class=\"gc\">Basmati Rice<br /></span>" +
+		"<span class=\"bc\">Puree<br /></span>" +
+		"<span class=\"gc\">Mashed Potatoes with our house seasoning<br /></span>" +
+		"<span class=\"bc\">Green Beans<br /></span>" +
+		"<span class=\"gc\">Green Beans Cooked In Soy Sauce and Covered in Sesame Seeds<br /></span>" +
+		"<span class=\"bc\">Potatoes<br /></span>" +
+		"<span class=\"gc\">Oven cooked, seasoned and crunchy<br /></span>" +
+		"<span class=\"bc\">Couscous<br /></span>" +
+		"<span class=\"gc\">Israeli Couscous with Spices and Chopped Onions<br /></span>" +
+		"<span class=\"bc\">French Fries<br /></span>" +
+		"<span class=\"gc\">Sliced thin and cooked to a crunch<br /></span>" +
+		"<span class=\"bc\">Pasta in Tomato Sauce<br /></span>" +
+		"<span class=\"gc\">Spaghetti cooked in tomato sauce<br /></span>" +
+		"</div>" +
+		"<br />" +
+		"<div class=\"orderlist_intl_english\">" +
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"_tag_english\"><strong>&#8362 12</strong></div>" +
+		"<strong>Salads</strong><br /><br />" +
+		"<span class=\"bc\">Ashkenazi Salad<br /></span>" +
+		"<span class=\"gc\">Lettuce, Red Peppers, Yellow Peppers, Avocado, and Tomatoes served with thousand island dressing<br /></span>" +
+		"<span class=\"bc\">Coleslaw<br /></span>" +
+		"<span class=\"gc\">Purple Cabbage with mayonnaise, Lemon juice, Garlic, and seasoning<br /></span>" +
+		"<span class=\"bc\">Israeli Salad<br /></span>" +
+		"<span class=\"gc\">Chopped Purple Onions, Cucumbers and Tomatoes with olive oil, parsley, salt, pepper, and lemon juice<br /></span>" +
+		"<span class=\"bc\">Roasted vegetables<br /></span>" +
+		"<span class=\"gc\">eggplant, sweet potato, courgettes, yellow pepper, seasoned nicely<br /></span>" +
+		"</div>" +
+		"<br />" +
+		"<div class=\"orderlist_intl_english\">" +
+		"<img class=\"tag_english\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"_tag_english\"><strong>&#8362 6</strong></div>" +
+		"<strong>Drinks</strong><br /><br />" +
+		"&#1511;&#1493;&#1500;&#1492<br />" +
+		"&#1494;&#1497;&#1512;&#1493<br />" +
+		"&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />" +
+		"&#1508;&#1488;&#1504;&#1496;&#1492<br />" +
+		"&#1505;&#1493;&#1491;&#1492<br />" +
+		"&#1502;&#1497;&#1501<br />" +
 		"</div>";
 		
 		
@@ -482,76 +474,92 @@
 		var menu = document.getElementById("menu");
 		
 		menu.innerHTML=
-		"<div class=\"orderlist_intl_hebrew\">"+
-		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"tag_\"><strong>&#8362 45</strong></div>"+
-		"<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />"+
-		"<span class=\"rc\">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />"+
-		"<span class=\"bc\">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />"+
-		"<span class=\"gc\">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />"+
-		"<span class=\"bc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />"+
-		"<span class=\"gc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />"+
-		"<span class=\"bc\">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />"+
-		"<span class=\"gc\">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />"+
-		"<span class=\"bc\">&#1506;&#1493;&#1507</span><br />"+
-		"<span class=\"gc\">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />"+
-		"<span class=\"bc\">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />"+
-		"<span class=\"gc\">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />"+
-		"<span class=\"bc\">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />"+
-		"<span class=\"gc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />"+
-		"<span class=\"bc\">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />"+
-		"<span class=\"gc\">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />"+
-		"<span class=\"bc\">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />"+
-		"<span class=\"gc\">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />"+
-		"<span class=\"bc\">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />"+
-		"<span class=\"gc\">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />"+
-		"</div>"+
-		"<br />"+
-		"<div class=\"orderlist_intl_hebrew\">"+
-		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"tag_\"><strong>&#8362 14</strong></div>"+
-		"<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />"+
-		"<span>&#1488;&#1493;&#1512;&#1494<br /></span>"+
-		"<span class=\"gc\">&#1488;&#1493;&#1512;&#1494;&#32;&#1489;&#1505;&#1502;&#1496;&#1497;&#32;&#1500;&#1489;&#1503;&#45;&#1506;&#1491;&#1497;&#1503<br /></span>"+
-		"<span class=\"bc\">&#1508;&#1497;&#1512;&#1492<br /></span>"+
-		"<span class=\"gc\">&#1502;&#1495;&#1497;&#1514;&#32;&#1514;&#1508;&#1493;&#1495;&#1497;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1489;&#1514;&#1497;&#1489;&#1493;&#1500;&#32;&#1492;&#1489;&#1497;&#1514<br /></span>"+
-		"<span class=\"bc\">&#1513;&#1506;&#1493;&#1506;&#1497;&#1514;&#32;&#1497;&#1512;&#1493;&#1511;&#1492<br /></span>"+
-		"<span class=\"gc\">&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1505;&#1493;&#1497;&#1492;&#32;&#1505;&#1497;&#1500;&#1488;&#1503;&#32;&#1488;&#1501;&#32;&#1513;&#1493;&#1502;&#1513;&#1493;&#1501;&#32;&#1502;&#1506;&#1500<br /></span>"+
-		"<span class=\"bc\">&#1514;&#1508;&#1493;&#34;&#1488;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>"+
-		"<span class=\"gc\">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1493;&#1511;&#1512;&#1488;&#1504;&#1510;&#1497<br /></span>"+
-		"<span class=\"bc\">&#1508;&#1514;&#1497;&#1514;&#1497;&#1501<br /></span>"+
-		"<span class=\"gc\">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1488;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1511;&#1510;&#1493;&#1509<br /></span>"+
-		"<span class=\"bc\">&#1510;&#1497;&#1508;&#34;&#1505<br /></span>"+
-		"<span class=\"gc\">&#1514;&#1508;&#1493;&#1495;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1511;&#1500;&#1488;&#1505;&#1497;&#32;&#1491;&#1511<br /></span>"+
-		"<span class=\"bc\">&#1508;&#1505;&#1496;&#1492;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>"+
-		"<span class=\"gc\">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>"+
-		"</div>"+
-		"<br />"+
-		"<div class=\"orderlist_intl_hebrew\">"+
-		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"tag_\"><strong>&#8362 12</strong></div>"+
-		"<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />"+
-		"<span class=\"bc\">&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1510;&#1500;&#1493;&#1497;&#1497;&#1501<br /></span>"+
-		"<span class=\"gc\">&#1489;&#1496;&#1496;&#1492;&#32;&#1511;&#1497;&#1513;&#1493;&#1488;&#32;&#1495;&#1510;&#1497;&#1500;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1493;&#1510;&#1492;&#1493;&#1489;&#32;&#1502;&#1514;&#1493;&#1489;&#1500;&#1504;&#1497;&#1501;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>"+
-		"<span class=\"bc\">&#1488;&#1513;&#1499;&#1504;&#1494;&#1497<br /></span>"+
-		"<span class=\"gc\">&#1495;&#1505;&#1492;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#44;&#32;&#1510;&#1492;&#1493;&#1489;&#44;&#32;&#1488;&#1489;&#1493;&#1511;&#1491;&#1493;&#32;&#1493;&#1506;&#1490;&#1489;&#1504;&#1497;&#1497;&#1492;&#32;&#1502;&#1493;&#1490;&#1513;&#32;&#1488;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1488;&#1500;&#1507;&#32;&#1492;&#1488;&#1497;&#1497;&#1501<br /></span>"+
-		"<span class=\"bc\">&#1499;&#1512;&#1493;&#1489<br /></span>"+
-		"<span class=\"gc\">&#1499;&#1512;&#1493;&#1489;&#32;&#1505;&#1490;&#1493;&#1500;&#32;&#1506;&#1501;&#32;&#1502;&#1497;&#1493;&#1504;&#1494;&#32;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501<br /></span>"+
-		"<span class=\"bc\">&#1497;&#1513;&#1512;&#1488;&#1500;&#1497<br /></span>"+
-		"<span class=\"gc\">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>"+
-		"</div>"+
-		"<br />"+
-		"<div class=\"orderlist_intl_hebrew\">"+
-		"<img class=\"tag\" src=\"icon-Tag.svg\" />"+
-		"<div class=\"tag_\"><strong>&#8362 6</strong></div>"+
-		"<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />"+
-		"&#1511;&#1493;&#1500;&#1492<br />"+
-		"&#1494;&#1497;&#1512;&#1493<br />"+
-		"&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />"+
-		"&#1508;&#1488;&#1504;&#1496;&#1492<br />"+
-		"&#1505;&#1493;&#1491;&#1492<br />"+
-		"&#1502;&#1497;&#1501<br />"+
+		"<div class=\"orderlist_intl_hebrew\">" +
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"tag_\"><strong>&#8362 45</strong></div>" +
+		"<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />" +
+		"<span class=\"rc\">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />" +
+		"<span class=\"bc\">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />" +
+		"<span class=\"gc\">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />" +
+		"<span class=\"bc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />" +
+		"<span class=\"gc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />" +
+		"<span class=\"bc\">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />" +
+		"<span class=\"gc\">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />" +
+		"<span class=\"bc\">&#1506;&#1493;&#1507</span><br />" +
+		"<span class=\"gc\">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />" +
+		"<span class=\"bc\">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />" +
+		"<span class=\"gc\">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />" +
+		"<span class=\"bc\">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />" +
+		"<span class=\"gc\">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />" +
+		"<span class=\"bc\">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />" +
+		"<span class=\"gc\">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />" +
+		"<span class=\"bc\">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />" +
+		"<span class=\"gc\">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />" +
+		"<span class=\"bc\">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />" +
+		"<span class=\"gc\">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />" +
+		"</div>" +
+		"<br />" +
+		"<div class=\"orderlist_intl_hebrew\">" +
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"tag_\"><strong>&#8362 14</strong></div>" +
+		"<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />" +
+		"<span>&#1488;&#1493;&#1512;&#1494<br /></span>" +
+		"<span class=\"gc\">&#1488;&#1493;&#1512;&#1494;&#32;&#1489;&#1505;&#1502;&#1496;&#1497;&#32;&#1500;&#1489;&#1503;&#45;&#1506;&#1491;&#1497;&#1503<br /></span>" +
+		"<span class=\"bc\">&#1508;&#1497;&#1512;&#1492<br /></span>" +
+		"<span class=\"gc\">&#1502;&#1495;&#1497;&#1514;&#32;&#1514;&#1508;&#1493;&#1495;&#1497;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1489;&#1514;&#1497;&#1489;&#1493;&#1500;&#32;&#1492;&#1489;&#1497;&#1514<br /></span>" +
+		"<span class=\"bc\">&#1513;&#1506;&#1493;&#1506;&#1497;&#1514;&#32;&#1497;&#1512;&#1493;&#1511;&#1492<br /></span>" +
+		"<span class=\"gc\">&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1505;&#1493;&#1497;&#1492;&#32;&#1505;&#1497;&#1500;&#1488;&#1503;&#32;&#1488;&#1501;&#32;&#1513;&#1493;&#1502;&#1513;&#1493;&#1501;&#32;&#1502;&#1506;&#1500<br /></span>" +
+		"<span class=\"bc\">&#1514;&#1508;&#1493;&#34;&#1488;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>" +
+		"<span class=\"gc\">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1493;&#1511;&#1512;&#1488;&#1504;&#1510;&#1497<br /></span>" +
+		"<span class=\"bc\">&#1508;&#1514;&#1497;&#1514;&#1497;&#1501<br /></span>" +
+		"<span class=\"gc\">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1488;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1511;&#1510;&#1493;&#1509<br /></span>" +
+		"<span class=\"bc\">&#1510;&#1497;&#1508;&#34;&#1505<br /></span>" +
+		"<span class=\"gc\">&#1514;&#1508;&#1493;&#1495;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1511;&#1500;&#1488;&#1505;&#1497;&#32;&#1491;&#1511<br /></span>" +
+		"<span class=\"bc\">&#1508;&#1505;&#1496;&#1492;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>" +
+		"<span class=\"gc\">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>" +
+		"</div>" +
+		"<br />" +
+		"<div class=\"orderlist_intl_hebrew\">" +
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"tag_\"><strong>&#8362 12</strong></div>" +
+		"<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />" +
+		"<span class=\"bc\">&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1510;&#1500;&#1493;&#1497;&#1497;&#1501<br /></span>" +
+		"<span class=\"gc\">&#1489;&#1496;&#1496;&#1492;&#32;&#1511;&#1497;&#1513;&#1493;&#1488;&#32;&#1495;&#1510;&#1497;&#1500;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1493;&#1510;&#1492;&#1493;&#1489;&#32;&#1502;&#1514;&#1493;&#1489;&#1500;&#1504;&#1497;&#1501;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>" +
+		"<span class=\"bc\">&#1488;&#1513;&#1499;&#1504;&#1494;&#1497<br /></span>" +
+		"<span class=\"gc\">&#1495;&#1505;&#1492;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#44;&#32;&#1510;&#1492;&#1493;&#1489;&#44;&#32;&#1488;&#1489;&#1493;&#1511;&#1491;&#1493;&#32;&#1493;&#1506;&#1490;&#1489;&#1504;&#1497;&#1497;&#1492;&#32;&#1502;&#1493;&#1490;&#1513;&#32;&#1488;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1488;&#1500;&#1507;&#32;&#1492;&#1488;&#1497;&#1497;&#1501<br /></span>" +
+		"<span class=\"bc\">&#1499;&#1512;&#1493;&#1489<br /></span>" +
+		"<span class=\"gc\">&#1499;&#1512;&#1493;&#1489;&#32;&#1505;&#1490;&#1493;&#1500;&#32;&#1506;&#1501;&#32;&#1502;&#1497;&#1493;&#1504;&#1494;&#32;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501<br /></span>" +
+		"<span class=\"bc\">&#1497;&#1513;&#1512;&#1488;&#1500;&#1497<br /></span>" +
+		"<span class=\"gc\">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>" +
+		"</div>" +
+		"<br />" +
+		"<div class=\"orderlist_intl_hebrew\">" +
+		"<img class=\"tag\" src=\"icon-Tag.svg\" />" +
+		"<div class=\"tag_\"><strong>&#8362 6</strong></div>" +
+		"<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />" +
+		"&#1511;&#1493;&#1500;&#1492<br />" +
+		"&#1494;&#1497;&#1512;&#1493<br />" +
+		"&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />" +
+		"&#1508;&#1488;&#1504;&#1496;&#1492<br />" +
+		"&#1505;&#1493;&#1491;&#1492<br />" +
+		"&#1502;&#1497;&#1501<br />" +
 		"</div>";
+		
+		var main_desc = document.getElementById("main_desc");
+		
+		main_desc.innerHTML=
+		"<p>"+
+		".&#1492;&#1497;&#1497;&#32;&#1500;&#1499;&#1493;&#1500;&#1501;&#32;&#1489;&#1512;&#1493;&#1499;&#1497;&#1501;&#32;&#1492;&#1489;&#1488;&#1497;&#1501;&#32;&#1500;&#1488;&#1514;&#1512;&#32;&#1492;&#1494;&#1502;&#1504;&#1493;&#1514;&#32;&#1513;&#1500;&#1497;&#32 </p>"+
+		"<p>"+
+		".&#1492;&#1488;&#1493;&#1499;&#1500;&#32;&#1513;&#1488;&#1504;&#1497;&#32;&#1502;&#1510;&#1497;&#1506;&#32;&#1500;&#1499;&#1501;&#32;&#1489;&#1514;&#1508;&#1512;&#1497;&#1496;&#32;&#1492;&#1493;&#1488;&#32;&#1488;&#1493;&#1499;&#1500;&#32;&#1499;&#1513;&#1512;&#32;&#1500;&#1502;&#1492;&#1491;&#1512;&#1497;&#1503;&#32;&#1493;&#1489;&#1513;&#1512;&#32;&#1495;&#1500;&#1511;&#32<br />.;&#1488;&#1493;&#1499;&#1500;&#32;&#1489;&#1497;&#1514;&#1497;&#32;&#1493;&#1496;&#1512;&#1497;&#32;&#1502;&#1490;&#1497;&#1506;&#32;&#1492;&#1497;&#1513;&#1512;&#32;&#1502;&#1492;&#1502;&#1496;&#1489;&#1495;&#32;&#1513;&#1500;&#1497;&#32;&#1489;&#1510;&#1493;&#1512;&#1514;&#32;&#1492;&#1490;&#1513;&#1492;&#32;&#1492;&#1504;&#1493;&#1495;&#1492;&#32;&#1500;&#1499;&#1501;&#32;&#1493;&#1489;&#1494;&#1502;&#1503;&#32;&#1492;&#1502;&#1514;&#1488;&#1497;&#1501;&#32;&#1500;&#1499;&#1501"+
+		"</p>"+
+		"<p>"+
+		"&#32;&#1513;&#1502;&#1497;&#32;&#1488;&#1500;&#1499;&#1505;&#32;&#1504;&#1493;&#1505;&#1489;&#1488;&#1493;&#1501;&#32;&#1493;&#1488;&#1504;&#1497;&#32;&#1499;&#1489;&#1512;&#32;&#1513;&#1504;&#1497;&#1501;&#32;&#1489;&#1514;&#1495;&#1493;&#1501;&#32;&#1492;&#1488;&#1493;&#1499;&#1500;&#44;&#32;&#1499;&#1489;&#1512;&#32;&#1502;&#1490;&#1497;&#1500;&#32;&#1510;&#1506;&#1497;&#1512;&#32;&#1488;&#1492;&#1489;&#1514;&#1497;&#32;&#1500;&#1489;&#1513;&#1500;&#32;&#1489;&#1489;&#1497;&#1514;&#32;&#1500;&#1502;&#1513;&#1508;&#1495;&#1492;&#32;&#1493;&#1495;&#1489;&#1512;&#1497;&#1501;&#32;&#1488;&#1508;&#1497;&#1500;&#1493;&#32;&#1500;&#1488;&#1497;&#1512;&#1493;&#1506;&#1497;&#1501;&#32;&#1502;&#1513;&#1508;&#1495;&#1514;&#1497;&#1497;&#1501.&#32;&#1513;&#1502;&#1495;&#32;&#1488;&#1493;&#1514;&#1497;&#32;&#1502;&#1488;&#1493;&#1491;&#32;&#1500;&#1512;&#1488;&#1493;&#1514;&#32;&#1488;&#1514;&#32;&#1492;&#1505;&#1489;&#1497;&#1489;&#1492;&#32;&#1492;&#1511;&#1512;&#1493;&#1489;&#1492;&#32;&#1488;&#1500;&#1497;&#32;&#1502;&#1514;&#1506;&#1504;&#1490;&#1514;&#32;&#1502;&#1502;&#1492;&#32;&#1513;&#1488;&#1504;&#1497;&#32;&#1502;&#1489;&#1513;&#1500;&#32;&#1493;&#1500;&#1499;&#1503;&#32;&#1492;&#1495;&#1500;&#1496;&#1497;&#32;&#1500;&#1508;&#1512;&#1505;&#1501;&#32;&#1493;&#1500;&#1492;&#1512;&#1495;&#1497;&#1489"+
+		"</p>"+
+		"<p>"+
+		".&#1488;&#1494;&#32;&#1512;&#1493;&#1510;&#1493;&#32;&#1500;&#1492;&#1494;&#1502;&#1497;&#1503;&#32;&#1495;&#1489;&#1512;&#1497;&#1501"+
+		"</p>";
+		main_desc.style.textAlign = "right";
 	}
 	var i = 0;
 	var slides = 
@@ -585,9 +593,6 @@
 </head>
 <body onload="construct_layout()" onresize="construct_layout()">
 
-
-
-
 <img src="Image-DSC_1805@2x.png" id="portrait"/>
 	<img src="Logo-InHisKitchen@2x.png" id="logo" />
 	<div id="main_desc">
@@ -604,7 +609,13 @@
 		</p>
 
 	</div>
-
+	
+<div id="setLanguage1" class="setLanguage">
+	<div class="whitebox">
+		<div id="hebrew_" onclick="setHebrew()">Hebrew</div>
+		<div id="english_" onclick="setEnglish()">English</div>
+	</div>
+</div>
 <div id="moveleft" onclick="moveleft()">
 &#10094;
 </div>
@@ -615,79 +626,76 @@
 <img id="images" src="Image-Example-1@2x.png" onclick="moveright()" />
 <img id="orderlist_sidebar" src="Image-Menu@2x.png" />
 	<div id="menu">
-		
-		
-		
-	<div class="orderlist_intl_hebrew">
-	<img class="tag" src="icon-Tag.svg" />
-	<div class="tag_"><strong>&#8362 45</strong></div>
-		<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />
-		<span class="rc">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />
-		<span class="bc">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />
-		<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />
-		<span class="bc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />
-		<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />
-		<span class="bc">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />
-		<span class="gc">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />
-		<span class="bc">&#1506;&#1493;&#1507</span><br />
-		<span class="gc">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />
-		<span class="bc">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />
-		<span class="gc">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />
-		<span class="bc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />
-		<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />
-		<span class="bc">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />
-		<span class="gc">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />
-		<span class="bc">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />
-		<span class="gc">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />
-		<span class="bc">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />
-		<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />
-	</div>
-	<br />
-	<div class="orderlist_intl_hebrew">
-	<img class="tag" src="icon-Tag.svg" />
-		<div class="tag_"><strong>&#8362 14</strong></div>
-		<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />
-		<span>&#1488;&#1493;&#1512;&#1494<br /></span>
-		<span class="gc">&#1488;&#1493;&#1512;&#1494;&#32;&#1489;&#1505;&#1502;&#1496;&#1497;&#32;&#1500;&#1489;&#1503;&#45;&#1506;&#1491;&#1497;&#1503<br /></span>
-		<span class="bc">&#1508;&#1497;&#1512;&#1492<br /></span>
-		<span class="gc">&#1502;&#1495;&#1497;&#1514;&#32;&#1514;&#1508;&#1493;&#1495;&#1497;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1489;&#1514;&#1497;&#1489;&#1493;&#1500;&#32;&#1492;&#1489;&#1497;&#1514<br /></span>
-		<span class="bc">&#1513;&#1506;&#1493;&#1506;&#1497;&#1514;&#32;&#1497;&#1512;&#1493;&#1511;&#1492<br /></span>
-		<span class="gc">&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1505;&#1493;&#1497;&#1492;&#32;&#1505;&#1497;&#1500;&#1488;&#1503;&#32;&#1488;&#1501;&#32;&#1513;&#1493;&#1502;&#1513;&#1493;&#1501;&#32;&#1502;&#1506;&#1500<br /></span>
-		<span class="bc">&#1514;&#1508;&#1493;&#34;&#1488;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>
-		<span class="gc">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1493;&#1511;&#1512;&#1488;&#1504;&#1510;&#1497<br /></span>
-		<span class="bc">&#1508;&#1514;&#1497;&#1514;&#1497;&#1501<br /></span>
-		<span class="gc">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1488;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1511;&#1510;&#1493;&#1509<br /></span>
-		<span class="bc">&#1510;&#1497;&#1508;&#34;&#1505<br /></span>
-		<span class="gc">&#1514;&#1508;&#1493;&#1495;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1511;&#1500;&#1488;&#1505;&#1497;&#32;&#1491;&#1511<br /></span>
-		<span class="bc">&#1508;&#1505;&#1496;&#1492;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
-		<span class="gc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
-	</div>
-	<br />
-	<div class="orderlist_intl_hebrew">
-	<img class="tag" src="icon-Tag.svg" />
-	<div class="tag_"><strong>&#8362 12</strong></div>
-		<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />
-		<span class="bc">&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1510;&#1500;&#1493;&#1497;&#1497;&#1501<br /></span>
-		<span class="gc">&#1489;&#1496;&#1496;&#1492;&#32;&#1511;&#1497;&#1513;&#1493;&#1488;&#32;&#1495;&#1510;&#1497;&#1500;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1493;&#1510;&#1492;&#1493;&#1489;&#32;&#1502;&#1514;&#1493;&#1489;&#1500;&#1504;&#1497;&#1501;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>
-		<span class="bc">&#1488;&#1513;&#1499;&#1504;&#1494;&#1497<br /></span>
-		<span class="gc">&#1495;&#1505;&#1492;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#44;&#32;&#1510;&#1492;&#1493;&#1489;&#44;&#32;&#1488;&#1489;&#1493;&#1511;&#1491;&#1493;&#32;&#1493;&#1506;&#1490;&#1489;&#1504;&#1497;&#1497;&#1492;&#32;&#1502;&#1493;&#1490;&#1513;&#32;&#1488;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1488;&#1500;&#1507;&#32;&#1492;&#1488;&#1497;&#1497;&#1501<br /></span>
-		<span class="bc">&#1499;&#1512;&#1493;&#1489<br /></span>
-		<span class="gc">&#1499;&#1512;&#1493;&#1489;&#32;&#1505;&#1490;&#1493;&#1500;&#32;&#1506;&#1501;&#32;&#1502;&#1497;&#1493;&#1504;&#1494;&#32;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501<br /></span>
-		<span class="bc">&#1497;&#1513;&#1512;&#1488;&#1500;&#1497<br /></span>
-		<span class="gc">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>
-	</div>
-	<br />
-	<div class="orderlist_intl_hebrew">
-	<img class="tag" src="icon-Tag.svg" />
-	<div class="tag_"><strong>&#8362 6</strong></div>
-		<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />
-		&#1511;&#1493;&#1500;&#1492<br />
-		&#1494;&#1497;&#1512;&#1493<br />
-		&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />
-		&#1508;&#1488;&#1504;&#1496;&#1492<br />
-		&#1505;&#1493;&#1491;&#1492<br />
-		&#1502;&#1497;&#1501<br />
-	</div>
+		<div class="orderlist_intl_hebrew">
+			<img class="tag" src="icon-Tag.svg" />
+			<div class="tag_"><strong>&#8362 45</strong></div>
+			<strong>&#1502;&#1504;&#1493;&#1514;&#32;&#1506;&#1511;&#1512;&#1497;&#1493;&#1514</strong><br /><br />
+			<span class="rc">&#1492;&#1502;&#1504;&#1492;&#32;&#1492;&#1506;&#1497;&#1511;&#1512;&#1497;&#1514;&#32;&#1502;&#1493;&#1490;&#1513;&#1514;&#32;&#1506;&#1501;&#32;&#1514;&#1493;&#1505;&#1508;&#1514;&#32;&#1493;&#1505;&#1500;&#1496;&#32;&#1500;&#1489;&#1495;&#1497;&#1512;&#1514;&#1498</span><br />
+			<span class="bc">&#1513;&#1504;&#1497;&#1510;&#1500</span><br />
+			<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1489;&#1510;&#1497;&#1508;&#1493;&#1497;&#32;&#1508;&#1497;&#1512;&#1493;&#1512;&#1497;&#32;&#1500;&#1495;&#1501;&#32;&#1502;&#1514;&#1493;&#1489;&#1500</span><br />
+			<span class="bc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514</span><br />
+			<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1502;&#1514;&#1493;&#1511;&#32;&#1506;&#1491;&#1497;&#1503</span><br />
+			<span class="bc">&#1506;&#1512;&#1488;&#1497;&#1497;&#1505</span><br />
+			<span class="gc">&#1508;&#1497;&#1514;&#1492;&#32;&#1489;&#1502;&#1497;&#1500;&#1493;&#1497;&#32;&#1489;&#1511;&#1512;&#32;&#1502;&#1506;&#1493;&#1512;&#1489;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1495;&#1512;&#1497;&#1507;&#45;&#40;&#1502;&#1488;&#1496;&#41</span><br />
+			<span class="bc">&#1506;&#1493;&#1507</span><br />
+			<span class="gc">&#1502;&#1493;&#1513;&#1512;&#1492;&#32;&#1489;&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501;&#32;&#1506;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1493;&#1489;&#1496;&#1496;&#1492;&#32;&#1489;&#1514;&#1504;&#1493;&#1512</span><br />
+			<span class="bc">&#1508;&#1512;&#1490;&#1497;&#1493;&#1514</span><br />
+			<span class="gc">&#1502;&#1512;&#1497;&#1504;&#1491;&#1492;&#32;&#1506;&#1500;&#32;&#1492;&#1508;&#1504;&#1510;&#1492</span><br />
+			<span class="bc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1493;&#1500;&#1493;&#1504;&#1494</span><br />
+			<span class="gc">&#1511;&#1510;&#1497;&#1510;&#1493;&#1514;&#32;&#1489;&#1511;&#1512;&#32;&#1506;&#1500;&#32;&#1508;&#1500;&#1496;&#1514;&#32;&#1505;&#1508;&#1490;&#1496;&#1497</span><br />
+			<span class="bc">&#1491;&#1490;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497</span><br />
+			<span class="gc">&#1491;&#1490;&#32;&#1488;&#1502;&#1504;&#1493;&#1503;&#32;&#1489;&#1505;&#1496;&#1497;&#1497;&#1500;&#32;&#1502;&#1512;&#1493;&#1511;&#1488;&#1497;&#32;&#40;&#1508;&#1497;&#1511;&#1504;&#1496;&#1497;&#41</span><br />
+			<span class="bc">&#1489;&#1493;&#1512;&#1511;&#1505;&#32;&#1489;&#1513;&#1512;&#32;&#1489;&#1511;&#1512</span><br />
+			<span class="gc">&#1489;&#1514;&#1493;&#1498;&#32;&#1489;&#1510;&#1511;&#32;&#1506;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1508;&#1496;&#1512;&#1497;&#1493;&#1514</span><br />
+			<span class="bc">&#1502;&#1493;&#1511;&#1508;&#1509;&#32;&#1506;&#1493;&#1507;&#32;&#1497;&#1512;&#1511;&#1493;&#1514</span><br />
+			<span class="gc">&#1495;&#1494;&#1492;&#32;&#1506;&#1493;&#1507;&#32;&#1504;&#1493;&#1491;&#1500;&#1505;&#32;&#1506;&#1501;&#32;&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1489;&#1505;&#1490;&#1504;&#1493;&#1503;&#32;&#1488;&#1505;&#1497;&#1497;&#1514;&#1497</span><br />
+		</div>
+		<br />
+		<div class="orderlist_intl_hebrew">
+			<img class="tag" src="icon-Tag.svg" />
+			<div class="tag_"><strong>&#8362 14</strong></div>
+			<strong>&#1514;&#1493;&#1505;&#1508;&#1493;&#1514</strong><br /><br />
+			<span>&#1488;&#1493;&#1512;&#1494<br /></span>
+			<span class="gc">&#1488;&#1493;&#1512;&#1494;&#32;&#1489;&#1505;&#1502;&#1496;&#1497;&#32;&#1500;&#1489;&#1503;&#45;&#1506;&#1491;&#1497;&#1503<br /></span>
+			<span class="bc">&#1508;&#1497;&#1512;&#1492<br /></span>
+			<span class="gc">&#1502;&#1495;&#1497;&#1514;&#32;&#1514;&#1508;&#1493;&#1495;&#1497;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1489;&#1514;&#1497;&#1489;&#1493;&#1500;&#32;&#1492;&#1489;&#1497;&#1514<br /></span>
+			<span class="bc">&#1513;&#1506;&#1493;&#1506;&#1497;&#1514;&#32;&#1497;&#1512;&#1493;&#1511;&#1492<br /></span>
+			<span class="gc">&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1505;&#1493;&#1497;&#1492;&#32;&#1505;&#1497;&#1500;&#1488;&#1503;&#32;&#1488;&#1501;&#32;&#1513;&#1493;&#1502;&#1513;&#1493;&#1501;&#32;&#1502;&#1506;&#1500<br /></span>
+			<span class="bc">&#1514;&#1508;&#1493;&#34;&#1488;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>
+			<span class="gc">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1493;&#1511;&#1512;&#1488;&#1504;&#1510;&#1497<br /></span>
+			<span class="bc">&#1508;&#1514;&#1497;&#1514;&#1497;&#1501<br /></span>
+			<span class="gc">&#1502;&#1514;&#1493;&#1489;&#1500;&#32;&#1488;&#1501;&#32;&#1489;&#1510;&#1500;&#32;&#1511;&#1510;&#1493;&#1509<br /></span>
+			<span class="bc">&#1510;&#1497;&#1508;&#34;&#1505<br /></span>
+			<span class="gc">&#1514;&#1508;&#1493;&#1495;&#32;&#1488;&#1491;&#1502;&#1492;&#32;&#1511;&#1500;&#1488;&#1505;&#1497;&#32;&#1491;&#1511<br /></span>
+			<span class="bc">&#1508;&#1505;&#1496;&#1492;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
+			<span class="gc">&#1505;&#1508;&#1490;&#1496;&#1497;&#32;&#1489;&#1512;&#1493;&#1496;&#1489;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1493;&#1514<br /></span>
+		</div>
+		<br />
+		<div class="orderlist_intl_hebrew">
+			<img class="tag" src="icon-Tag.svg" />
+			<div class="tag_"><strong>&#8362 12</strong></div>
+			<strong>&#1505;&#1500;&#1496;&#1497;&#1501</strong><br /><br />
+			<span class="bc">&#1497;&#1512;&#1511;&#1493;&#1514;&#32;&#1510;&#1500;&#1493;&#1497;&#1497;&#1501<br /></span>
+			<span class="gc">&#1489;&#1496;&#1496;&#1492;&#32;&#1511;&#1497;&#1513;&#1493;&#1488;&#32;&#1495;&#1510;&#1497;&#1500;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1493;&#1510;&#1492;&#1493;&#1489;&#32;&#1502;&#1514;&#1493;&#1489;&#1500;&#1504;&#1497;&#1501;&#32;&#1489;&#1514;&#1504;&#1493;&#1512<br /></span>
+			<span class="bc">&#1488;&#1513;&#1499;&#1504;&#1494;&#1497<br /></span>
+			<span class="gc">&#1495;&#1505;&#1492;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#44;&#32;&#1510;&#1492;&#1493;&#1489;&#44;&#32;&#1488;&#1489;&#1493;&#1511;&#1491;&#1493;&#32;&#1493;&#1506;&#1490;&#1489;&#1504;&#1497;&#1497;&#1492;&#32;&#1502;&#1493;&#1490;&#1513;&#32;&#1488;&#1501;&#32;&#1512;&#1493;&#1496;&#1489;&#32;&#1488;&#1500;&#1507;&#32;&#1492;&#1488;&#1497;&#1497;&#1501<br /></span>
+			<span class="bc">&#1499;&#1512;&#1493;&#1489<br /></span>
+			<span class="gc">&#1499;&#1512;&#1493;&#1489;&#32;&#1505;&#1490;&#1493;&#1500;&#32;&#1506;&#1501;&#32;&#1502;&#1497;&#1493;&#1504;&#1494;&#32;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503;&#32;&#1513;&#1493;&#1501;&#32;&#1493;&#1514;&#1489;&#1500;&#1497;&#1504;&#1497;&#1501<br /></span>
+			<span class="bc">&#1497;&#1513;&#1512;&#1488;&#1500;&#1497<br /></span>
+			<span class="gc">&#1489;&#1510;&#1500;&#32;&#1488;&#1491;&#1493;&#1501;&#32;&#1511;&#1510;&#1493;&#1509;&#32;&#1502;&#1500;&#1508;&#1508;&#1493;&#1503;&#32;&#1506;&#1490;&#1489;&#1504;&#1497;&#1492;&#32;&#1513;&#1502;&#1503;&#32;&#1494;&#1497;&#1514;&#32;&#1508;&#1496;&#1512;&#1493;&#1494;&#1497;&#1500;&#1497;&#1492;&#32;&#1502;&#1500;&#1495;&#32;&#1508;&#1500;&#1508;&#1500;&#32;&#1493;&#1502;&#1497;&#1509;&#32;&#1500;&#1497;&#1502;&#1493;&#1503<br /></span>
+		</div>
+		<br />
+		<div class="orderlist_intl_hebrew">
+			<img class="tag" src="icon-Tag.svg" />
+			<div class="tag_"><strong>&#8362 6</strong></div>
+			<strong>&#1513;&#1514;&#1497;&#1497;&#1492</strong><br /><br />
+			&#1511;&#1493;&#1500;&#1492<br />
+			&#1494;&#1497;&#1512;&#1493<br />
+			&#1505;&#1508;&#1512;&#1497;&#1497;&#1496<br />
+			&#1508;&#1488;&#1504;&#1496;&#1492<br />
+			&#1505;&#1493;&#1491;&#1492<br />
+			&#1502;&#1497;&#1501<br />
+		</div>
 	</div>
 	
 	<img id="spagetti_backdrop" src="Image-Example@2x.png" />
@@ -727,15 +735,19 @@
 	<a href="#recommendations"><img src="icon-Recommandations.svg" class="icon" /></a>
 </div>
 
-<div id="setLanguage">
-<div id="whitebox">
+<div id="setLanguage_menu" class="setLanguage">
+<div class="whitebox">
 	<div id="hebrew" onclick="setHebrew()">Hebrew</div>
 	<div id="english" onclick="setEnglish()">English</div>
 	</div>
 </div>
-
+<a href="order.html">
+<div id="gotocheckout">
+Order here
+</div>
+</a>
 <div id="footer">
-&#1500;&#1492;&#1494;&#1502;&#1504;&#1493;&#1514
+	&#1500;&#1492;&#1494;&#1502;&#1504;&#1493;&#1514
 <br />
 052-75.88.497
 </div>

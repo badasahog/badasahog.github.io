@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>order</title>
+	<style>
+	table{
+	float:right;
+	width:100%;
+	}
+		#mainTable
+		{
+			float:right;
+			text-align:center;
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width:30%;
+		}
+		input
+		{
+			width:10%;
+		}
+
+
+		#mainTable td, #mainTable th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#mainTable tr:nth-child(even){background-color: #f2f2f2;}
+
+		#mainTable tr:hover {background-color: #ddd;}
+
+		#mainTable th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #04AA6D;
+			color: white;
+		}
+		
+		#checkout {
+		float:right;
+		background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 16px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  transition-duration: 0.4s;
+		  cursor: pointer;
+		  background-color: white;
+		  color: black;
+		  border: 2px solid #555555;
+		}
+
+		#checkout:hover {
+		  background-color: #555555;
+		  color: white;
+		}
+	</style>
+	<script>
+		function subto(id)
+		{
+			var tg = document.getElementById(id);
+			var val = tg.value;
+			val--;
+			tg.value = val;
+		}
+		function addto(id)
+		{
+			var tg = document.getElementById(id);
+			var val = tg.value;
+			val++;
+			tg.value = val;
+		}
+	</script>
+</head>
+<body>
+<form>
+<table>
+<tr><td>
+	<table id="mainTable" width="30%">
+		<tr>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Name</th>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f1')" /> <input id="f1" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f1')" /></td>
+			<td>Rice</td>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f2')" /> <input id="f2" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f2')" /></td>
+			<td>Puree</td>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f3')" /> <input id="f3" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f3')" /></td>
+			<td>Green Beans</td>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f4')" /> <input id="f4" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f4')" /></td>
+			<td>Potatoes</td>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f5')" /> <input id="f5" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f5')" /></td>
+			<td>Couscous</td>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f6')" /> <input id="f6" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f6')" /></td>
+			<td>French Fries</td>
+		</tr>
+		<tr>
+			<td>&#8362 14</td>
+			<td><input type="button" value="-" onclick="subto('f7')" /> <input id="f7" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f7')" /></td>
+			<td>Pasta in Tomato Sauce</td>
+		</tr>
+		<tr>
+			<td>&#8362 12</td>
+			<td><input type="button" value="-" onclick="subto('f8')" /> <input id="f8" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f8')" /></td>
+			<td>Ashkenazi Salad</td>
+		</tr>
+		<tr>
+			<td>&#8362 12</td>
+			<td><input type="button" value="-" onclick="subto('f9')" /> <input id="f9" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f9')" /></td>
+			<td>Coleslaw</td>
+		</tr>
+		<tr>
+			<td>&#8362 12</td>
+			<td><input type="button" value="-" onclick="subto('f10')" /> <input id="f10" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f10')" /></td>
+			<td>Israeli Salad</td>
+		</tr>
+		
+		<tr>
+			<td>&#8362 12</td>
+			<td><input type="button" value="-" onclick="subto('f20')" /> <input id="f20" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f20')" /></td>
+			<td>Roasted vegetables</td>
+		</tr>
+		
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f11')" /> <input id="f11" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f11')" /></td>
+			<td>Schnitzel for the soul</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f12')" /> <input id="f12" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f12')" /></td>
+			<td>The Classic Beef Kebab</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f13')" /> <input id="f13" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f13')" /></td>
+			<td>Ara’is from the East</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f14')" /> <input id="f14" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f14')" /></td>
+			<td>Not just your normal chicken</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f15')" /> <input id="f15" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f15')" /></td>
+			<td>Dark Side of the bird</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f16')" /> <input id="f16" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f16')" /></td>
+			<td>Nonna’s Spaghetti Bolognese</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f17')" /> <input id="f17" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f17')" /></td>
+			<td>Spicy Fish In this Moroccan dish</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f18')" /> <input id="f18" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f18')" /></td>
+			<td>The Beefiest Bourekas</td>
+		</tr>
+		<tr>
+			<td>&#8362 45</td>
+			<td><input type="button" value="-" onclick="subto('f19')" /> <input id="f19" type="text" value ="0" /> <input type="button" value="+" onclick="addto('f19')" /></td>
+			<td>Tastes Like Christmas</td>
+		</tr>
+		
+	
+	</table>
+	</tr></td>
+	<tr><td><input type="button" id="checkout" value="go to checkout" /></td></tr>
+	</table>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
