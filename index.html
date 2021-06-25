@@ -345,14 +345,14 @@
 		orderlist_sidebar.style.top=frame3_base+"px";
 		orderlist_sidebar.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
-		var setLanguageMenu = document.getElementById("setLanguage_menu");
-		setLanguageMenu.style.top=frame3_base+"px";
-		setLanguageMenu.style.left=frame_baseoffset+frame_basewidth*.7+"px";
+		//var setLanguageMenu = document.getElementById("setLanguage_menu");
+		//setLanguageMenu.style.top=frame3_base+"px";
+		//setLanguageMenu.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
-		var gotocheckout = document.getElementById("gotocheckout");
+		//var gotocheckout = document.getElementById("gotocheckout");
 		
-		gotocheckout.style.top=frame3_base+h*.2+"px";
-		gotocheckout.style.left=frame_baseoffset+frame_basewidth*.7+"px";
+		//gotocheckout.style.top=frame3_base+h*.2+"px";
+		//gotocheckout.style.left=frame_baseoffset+frame_basewidth*.7+"px";
 		
 		
 		var menu = document.getElementById("menu");
@@ -379,7 +379,7 @@
 		recommendations.style.height=h+"px";
 		recommendations.style.width=frame_basewidth+"px";
 		
-		
+		setEnglish();
 	}
 	function setEnglish()
 	{
@@ -570,13 +570,13 @@
 		"DSC_1712.JPG",
 		"DSC_1719.JPG",
 		"DSC_1723.JPG",
-		"DSC_1726.JPG",
+		//"DSC_1726.JPG",
 		"DSC_1732.JPG",
 	];
 	function moveleft()
 	{
 		i++;
-		i%=8;
+		i%=7;
 		document.getElementById("images").src=slides[i];
 		console.log(i);
 	}
@@ -584,7 +584,7 @@
 	{
 	
 		i--;
-		if(i<0)i=7;
+		if(i<0)i=6;
 		document.getElementById("images").src=slides[i];
 		console.log(i);
 		
@@ -735,17 +735,6 @@
 	<a href="#recommendations"><img src="icon-Recommandations.svg" class="icon" /></a>
 </div>
 
-<div id="setLanguage_menu" class="setLanguage">
-<div class="whitebox">
-	<div id="hebrew" onclick="setHebrew()">Hebrew</div>
-	<div id="english" onclick="setEnglish()">English</div>
-	</div>
-</div>
-<a href="order.html">
-<div id="gotocheckout">
-Order here
-</div>
-</a>
 <div id="footer">
 	&#1500;&#1492;&#1494;&#1502;&#1504;&#1493;&#1514
 <br />
